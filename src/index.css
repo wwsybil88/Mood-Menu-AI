@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #575c81;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #b4b8e2;
+  --color-on-primary-container: #43486c;
+  
+  --color-secondary: #2c6956;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #aeedd5;
+  --color-on-secondary-container: #316d5b;
+
+  --color-tertiary: #785741;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #dcb397;
+  --color-on-tertiary-container: #62442f;
+
+  --color-surface: #f9f9fb;
+  --color-on-surface: #1a1c1d;
+  --color-on-surface-variant: #46464e;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f9f9fb] text-[#1a1c1d] font-sans overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/45 backdrop-blur-3xl border border-white/25;
+  }
+
+  .fluid-gradient {
+    background: linear-gradient(135deg, #f3e8ff 0%, #ffedd5 50%, #e0e7ff 100%);
+    background-size: 400% 400%;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; filter: blur(8px); }
+  50% { transform: scale(1.1); opacity: 1; filter: blur(12px); }
+}
+
+.chef-orb {
+  animation: orb-pulse 4s infinite ease-in-out;
+  background: radial-gradient(circle, #b4b8e2 0%, #575c81 100%);
+  box-shadow: 0 0 20px rgba(87, 92, 129, 0.4);
+}
+
+.alchemy-chart {
+  background: radial-gradient(circle at center, transparent 0%, rgba(87, 92, 129, 0.05) 100%);
+}
+
+textarea:focus {
+  outline: none;
+}
